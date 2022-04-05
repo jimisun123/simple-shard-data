@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jimisun.simplesharddata.mapper.MasterMapper">
+
+
+    <select id="selectMaxHsInfoId" resultType="java.lang.Long">
+        SELECT IFNULL(max(ID), 0) as minId
+        FROM xxx
+    </select>
+
+
+    <select id="selectHsDataByParams" resultType="java.util.Map">
+        select *
+        from xxx
+        where id <![CDATA[>]]> #{start}
+          and id <![CDATA[<=]]> #{end}
+    </select>
+
+
+</mapper>
